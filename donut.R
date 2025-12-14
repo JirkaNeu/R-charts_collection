@@ -21,7 +21,7 @@ require(ggplot2)
   geom_text(aes(label = g_perc),
             position = position_stack(vjust = 0.5)) +
   coord_polar(theta = "y") +
-  scale_fill_manual(values = c("#FFF7FB", "#D0D1E6",
+  scale_fill_manual(values = c("#D0D1E6",
                                "#74A9CF", "#0570B0"),
                     guide = guide_legend(reverse = TRUE)) + #reorder legend
   #xlim(c(0.5, hsize + 1,5)) +
@@ -34,7 +34,9 @@ require(ggplot2)
         axis.text = element_blank())
 
 
+
 ## antialiasing with Cairo-Library:
+##---------------------------------
 
 require(Cairo)
 CairoWin()
@@ -51,7 +53,7 @@ ggplot(gender_df, aes(x = hsize, y = g_count, fill = Gender)) +
   geom_text(aes(label = g_perc),
             position = position_stack(vjust = 0.5), size = 6) +
   coord_polar(theta = "y") +
-  scale_fill_manual(values = c("#FFF7FB", "#D0D1E6",
+  scale_fill_manual(values = c("#D0D1E6",
                                "#74A9CF", "#0570B0"),
                     guide = guide_legend(reverse = TRUE)) + #reorder legend
   #xlim(c(0.5, hsize + 1,5)) +
@@ -62,3 +64,31 @@ ggplot(gender_df, aes(x = hsize, y = g_count, fill = Gender)) +
         axis.title = element_blank(),
         axis.ticks = element_blank(),
         axis.text = element_blank())
+
+
+
+## 2nd Version with Labels:
+##-------------------------
+
+require(ggplot2)
+ggplot(gender_df, aes(x = hsize, y = g_count, fill = Gender)) +
+  geom_col(color = "black") +
+  geom_label(aes(label = g_perc, color = "white"),
+             position = position_stack(vjust = 0.5),
+             show.legend = FALSE) +
+  scale_color_identity() +
+  coord_polar(theta = "y") +
+  scale_fill_manual(values = c("#D0D1E6",
+                               "#74A9CF", "#0570B0"),
+                    guide = guide_legend(reverse = TRUE)) + #reorder legend
+  xlim(c(0.6, hsize + .7)) +
+  theme(panel.background = element_rect(fill = "white"),
+        panel.grid = element_blank(),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank())
+
+
+
+
+
