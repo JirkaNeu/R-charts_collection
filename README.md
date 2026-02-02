@@ -1,9 +1,9 @@
 # R-charts_collection
 my charts - work in progress
 
-starting off with a donut
-radar chart added, together with Cairo package (anti-aliasing)
-some bar and col charts added
+- starting off with a donut
+- radar chart added, together with Cairo package (anti-aliasing)
+- some bar and col charts added
 
 
 
