@@ -10,4 +10,5 @@ my charts - work in progress
 inspired by:
 
 https://r-charts.com/
-#https://r-resources.massey.ac.nz/rgcookbook/
+
+https://r-resources.massey.ac.nz/rgcookbook/
